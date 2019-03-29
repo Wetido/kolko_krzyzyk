@@ -1,6 +1,6 @@
 
 
-public interface intefejsik {
+public interface Drukowalny {
 
     public void drukuj( );
 

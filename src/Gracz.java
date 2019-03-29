@@ -5,6 +5,10 @@ public class Gracz {
 
     private static int gracz = 0;
 
+    public String getImie(){
+        return this.imie;
+    }
+
     public Gracz(String imie) {
 
         gracz++;

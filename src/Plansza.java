@@ -1,50 +1,42 @@
-import java.util.ArrayList;
+public class Plansza implements Drukowalny {
 
-public class Plansza implements intefejsik {
-
-    static char[][] plansza = new char[3][3];
+    static char[] plansza = new char[9];
     static int numerek = 0;
 
-    Plansza(){
+    Plansza() {
 
-        for( int i = 0; i < 3 ; i++ ){
-            for( int j = 0; j < 3; j++ ){
+        for (int i = 0; i < 9; i++) {
 
-                plansza[i][j] = '-';
-            }
-
+            plansza[i] = '-';
         }
     }
 
     @Override
-    public void drukuj( ) {
+    public void drukuj() {
+
+
+        if (Gra.getRuch().get(numerek).getGracz() == 1) {
+
+            plansza[Gra.getRuch().get(numerek).getRuch()] = 'X';
+        } else {
+
+            plansza[Gra.getRuch().get(numerek).getRuch()] = 'O';
+        }
+
+        numerek++;
 
 
 
-            if( Gra.ruchy.get(numerek).getGracz() == 1 ){
+        for (int i = 0; i < 9; i++) {
 
-                plansza[ Gra.ruchy.get(numerek).getX() ]
-                        [ Gra.ruchy.get(numerek).getY()] = 'X';
-            }
+            System.out.print(plansza[i]);
 
-            if( Gra.ruchy.get(numerek).getGracz() == 2 ){
-
-                plansza[ Gra.ruchy.get(numerek).getX() ]
-                        [ Gra.ruchy.get(numerek).getY()] = 'O';
-            }
-
-            numerek ++;
-
-
-        for( int i = 0; i < 3 ; i++ ){
-            for( int j = 0; j < 3; j++ ){
-
-                System.out.print( plansza[i][j]);
-            }
-            System.out.println();
-
+            if ((i + 1) % 3 == 0) System.out.print("\n");
         }
 
 
     }
+
+
 }
+

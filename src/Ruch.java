@@ -2,39 +2,35 @@ import java.util.Scanner;
 
 public class Ruch {
 
-    private int x;
-    private int y;
+    private int ruch;
     private int gracz;
+
+    public Ruch() { }
 
     public int getGracz() {
         return gracz;
     }
 
-    public int getX() {
-        return x;
+    public int getRuch() {
+        return ruch;
     }
 
-    public int getY() {
-        return y;
-    }
 
     public Ruch(Gracz g) {
 
+        System.out.println( "Ruch gracza " + g.getImie() );
 
-        //Adzia mówi zeby sprawdzic ifem
         Scanner scanner = new Scanner( System.in );
-        System.out.print("Podej x");
-        x = scanner.nextInt();
+        System.out.print("Podaj pole ( 1 - 9 ) ");
+        ruch = scanner.nextInt() - 1;
 
-        System.out.print("Podej y");
-        y = scanner.nextInt();
 
-        if(g.pionek == 'X'){
+        if( g.pionek == 'X'){
 
             gracz = 1;
         }
 
-        if(g.pionek == 'O'){
+        if( g.pionek == 'O'){
 
             gracz = 2;
         }
