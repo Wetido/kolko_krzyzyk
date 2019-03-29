@@ -20,9 +20,12 @@ public class Ruch {
 
         System.out.println( "Ruch gracza " + g.getImie() );
 
-        Scanner scanner = new Scanner( System.in );
-        System.out.print("Podaj pole ( 1 - 9 ) ");
-        ruch = scanner.nextInt() - 1;
+        do{
+
+            Scanner scanner = new Scanner( System.in );
+            System.out.print("Podaj pole ( 1 - 9 ) ");
+            ruch = scanner.nextInt() - 1;
+        } while ( ruch < 0 || ruch >= 9 );
 
 
         if( g.pionek == 'X'){

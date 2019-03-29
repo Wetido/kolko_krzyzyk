@@ -33,7 +33,7 @@ public class Gra {
     public static void main(String[] args) {
 
 
-        Gra gra = new Gra();
+        new Gra();
         Plansza plansza = new Plansza();
         short liczbaRuchow = 0;
 
