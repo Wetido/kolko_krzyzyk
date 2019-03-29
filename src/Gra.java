@@ -8,7 +8,7 @@ public class Gra {
     static private Gracz player2 = new Gracz("Gracz2");
 
 
-    static private ArrayList< Ruch > ruchy = new ArrayList<>( 9 );
+    static private ArrayList< Ruch > ruch = new ArrayList<>( 9 );
     static private ArrayList< Boolean > ruch2 = new ArrayList<>( 9 );
 
 
@@ -17,14 +17,14 @@ public class Gra {
     }
 
     public static ArrayList<Ruch> getRuch() {
-        return ruchy;
+        return ruch;
     }
 
     Gra(){
 
         for( int i = 0; i < 9; i ++){
 
-            ruchy.add( new Ruch());
+            ruch.add( new Ruch());
             ruch2.add( false );
         }
 
@@ -41,10 +41,10 @@ public class Gra {
 
             do{
 
-                ruchy.set( liczbaRuchow, new Ruch( player1 ));
-            } while( Gra.getRuch2().get( Gra.getRuch().get( ) ) == true);
+                ruch.set( liczbaRuchow, new Ruch( player1 ));
+            } while( getRuch2().get( getRuch().get( liczbaRuchow ).getRuch() ) == true);
 
-            Gra.getRuch2().set( liczbaRuchow, true );
+            Gra.getRuch2().set( getRuch().get( liczbaRuchow ).getRuch() , true );
 
             liczbaRuchow ++;
 
@@ -54,11 +54,11 @@ public class Gra {
 
             do{
 
-                ruchy.set( liczbaRuchow, new Ruch( player2 ));
-            } while ( Gra.getRuch2().get( Gra.getRuch().get( liczbaRuchow ).getRuch()) == true );
+                ruch.set( liczbaRuchow, new Ruch( player2 ));
+            } while ( getRuch2().get( getRuch().get( liczbaRuchow ).getRuch()) == true );
 
 
-            Gra.getRuch2().set( liczbaRuchow, true );
+            Gra.getRuch2().set( getRuch().get( liczbaRuchow ).getRuch(), true );
 
             liczbaRuchow ++;
 
